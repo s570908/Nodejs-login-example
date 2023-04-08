@@ -26,7 +26,7 @@ app.get("/makeSession", (req, res) => {
 app.get("/confirmSession", (req, res) => {
   if (req.session.test) {
     console.log(req.session);
-    res.send("세션 있습니다.");
+    res.send(`세션 있습니다: ${JSON.stringify(req.session, null, 2)}`);
   } else {
     console.log("no session");
     res.send("세션 없습니다.");
